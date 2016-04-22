@@ -7,7 +7,7 @@
     "build": "npm-run-all clean test compile",
     "clean": "rimraf lib",
     "compile": "babel src -d lib",
-    "lint": "eslint src test",
+    "lint": "eslint --fix src test",
     "preversion": "npm run build",
     "postversion": "git push && git push --tags",
     "test": "npm-run-all lint test:unit",
