@@ -11,3 +11,11 @@ async function asyncFun() {
 	return value;
 }
 asyncFun().then(x => console.log(`x: ${x}`));
+
+export function addition(x, y) {
+	return x + y;
+}
+
+export default {
+	addition,
+};

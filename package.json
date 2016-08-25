@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm-run-all clean test transpile",
     "clean": "rimraf lib",
+    "coverage": "nyc mocha --require babel-core/register --recursive",
     "transpile": "babel src -d lib",
     "lint": "eslint src test",
     "preversion": "npm run build",
@@ -37,6 +38,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "mocha": "^2.4.5",
     "npm-run-all": "^1.7.0",
+    "nyc": "^8.1.0",
     "rimraf": "^2.5.2"
   },
   "dependencies": {}
