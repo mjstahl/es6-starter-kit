@@ -4,19 +4,14 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "npm-run-all clean test compile",
+    "build": "npm-run-all clean test transpile",
     "clean": "rimraf lib",
-    "compile": "babel src -d lib",
-    "lint": "eslint --fix src test",
+    "transpile": "babel src -d lib",
+    "lint": "eslint src test",
     "preversion": "npm run build",
     "postversion": "git push && git push --tags",
     "test": "npm-run-all lint test:unit",
     "test:unit": "mocha --require babel-core/register --recursive"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
   },
   "repository": {
     "type": "git",
@@ -31,7 +26,12 @@
   "devDependencies": {
     "babel-cli": "^6.7.7",
     "babel-eslint": "^6.0.3",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-plugin-transform-regenerator": "^6.14.0",
+    "babel-plugin-transform-runtime": "^6.12.0",
     "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-3": "^6.11.0",
     "chai": "^3.5.0",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
